@@ -19,8 +19,6 @@ export default class AdrElement extends React.Component<AdrElementProperties, Ad
     this.go = this.go.bind(this);
   }
 
-
-
   go(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     console.log("click");
     githubClient.searchAllAdrs().then(adrs=>{

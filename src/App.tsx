@@ -3,7 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 import AdrElement from './components/elements/AdrElement';
 import { githubClient } from './clients/GithubClient';
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomeView from './components/views/HomeView'
+import ImprintView from './components/views/ImprintView'
+import PageNotFoundView from './components/views/error/PageNotFoundView';
 
 interface AppProperties {
   dataName?: String
@@ -24,12 +27,24 @@ class App extends React.Component<AppProperties, AppState>{
 
   hm(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     console.log("ahaaaa")
-    githubClient.go()
   }
 
   public render() {
     return (
       <div className="App">
+
+        <Router>
+          <div>hello</div>
+          <Routes>
+          <Route path="/" element={<HomeView/>}/>
+          <Route path="/home" element={<HomeView/>}/>
+          <Route path="/imprint" element={<ImprintView/>}/>
+          <Route path="*" element={<PageNotFoundView/>}/>
+          </Routes>
+
+        </Router>
+        
+
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" onClick={this.hm} />
           <p onClick={this.hm}>
