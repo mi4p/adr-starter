@@ -23,7 +23,10 @@ export default class AdrElement extends React.Component<AdrElementProperties, Ad
 
   go(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     console.log("click");
-    githubClient.go();
+    githubClient.searchAllAdrs().then(adrs=>{
+      adrs.forEach(item => console.log(item.downloadUrl))
+
+    });
     this.setState({
       name: "Herbert"
     })
@@ -32,7 +35,7 @@ export default class AdrElement extends React.Component<AdrElementProperties, Ad
 
   public render() {
     return (
-      <div className="App" onClick={githubClient.getAllAdrs}>
+      <div className="App" onClick={this.go}>
         getAllDrs {this.state.name}  {this.state.lastName} {this.props.dataName}
       </div>
     )
