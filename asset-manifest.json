@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/adr-starter/static/css/main.d79e64a1.css",
+    "main.js": "/adr-starter/static/js/main.97a534df.js",
+    "index.html": "/adr-starter/index.html",
+    "main.d79e64a1.css.map": "/adr-starter/static/css/main.d79e64a1.css.map",
+    "main.97a534df.js.map": "/adr-starter/static/js/main.97a534df.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d79e64a1.css",
+    "static/js/main.97a534df.js"
+  ]
+}
